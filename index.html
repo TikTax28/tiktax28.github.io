@@ -98,7 +98,7 @@
     }
 
     /* Flip effect on hover */
-    .flip-card:hover .flip-card-inner {
+    .flip-card.flipped .flip-card-inner {
       transform: rotateY(180deg);
     }
 
@@ -174,7 +174,7 @@
 <body>
   <div class="card-container">
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -186,7 +186,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="arrow">&#8691;</div>
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
@@ -199,7 +199,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -211,7 +211,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="arrow">&#8691;</div>
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
@@ -224,7 +224,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -236,7 +236,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="arrow">&#8691;</div>
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
@@ -249,7 +249,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <h1>Leersituaties</h1>
@@ -260,7 +260,7 @@
       </div>
     </div>
 
-    <div class="flip-card">
+    <div class="flip-card" onclick="toggleFlip(this)">
       <div class="arrow">&#8691;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -294,3 +294,9 @@
   </div>
 </body>
 </html>
+
+<script>
+  function toggleFlip(card) {
+    card.classList.toggle('flipped');
+  }
+</script>
