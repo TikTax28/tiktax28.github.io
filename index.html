@@ -169,10 +169,26 @@
       align-items: center;
       justify-content: center;
     }
+
+    .top-left {
+      position: absolute;
+      scale: 0.25;
+      transform: translate(-2200px, -400px);
+    }
+
+    .top-right {
+      position: absolute;
+      scale: 0.25;
+      transform: translate(2200px, -900px);
+    }
   </style>
 </head>
 <body>
+  <!-- Add images -->
+  <img src="silver.svg" class="top-left" alt="Top Left Image">
+  <img src="pace.svg" class="top-right" alt="Top Right Image">
   <div class="card-container">
+    
 
     <div class="flip-card" onclick="toggleFlip(this)">
       <div class="vertical-arrow">&#8681;</div>
@@ -290,6 +306,7 @@
         </marker>
       </defs>
     </svg>
+    
 
   </div>
 </body>
