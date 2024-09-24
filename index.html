@@ -5,8 +5,19 @@
   <title>Flip Cards</title>
   <style>
     body {
-      background-color: rgb(229, 213, 183);
+      background-color: rgb(248, 249, 241);
     }
+
+    /* Container for flexbox layout */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center the rows */
+      max-width: 900px; /* Limit the width of the card container */
+      margin: 0 auto; /* Center the container */
+      position: relative;
+    }
+
     /* Flip card container */
     .flip-card {
       background-color: transparent;
@@ -14,7 +25,64 @@
       height: 200px;
       perspective: 1000px;
       display: inline-block; /* Zorgt ervoor dat de kaarten naast elkaar komen te staan */
-      margin: 20px; /* Ruimte tussen de kaarten */
+      margin: 10px 50px; /* Ruimte tussen de kaarten */
+    }
+
+    /* Center the arrow between cards */
+    .arrow {
+      font-size: 50px;
+      margin: 0 20px; /* Space around the arrow */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-200px, 70px); /* Move the arrow 20px to the left and 20px down */
+       /* Adjusted to center align */
+    }
+
+     /* New vertical arrow */
+     .vertical-arrow {
+      font-size: 60px;
+      margin: 10px 0; /* Space around the arrow */
+      display: flex;
+      align-items: right;
+      justify-content: right;
+      position: absolute; /* Position the arrow absolutely */
+      z-index: 10; /* Ensure the arrow is above the cards */
+      transform: translate(225px, 150px);
+    }
+
+    .vertical-arrow2 {
+      font-size: 60px;
+      margin: 10px 0; /* Space around the arrow */
+      display: flex;
+      align-items: right;
+      justify-content: right;
+      position: absolute; /* Position the arrow absolutely */
+      z-index: 10; /* Ensure the arrow is above the cards */
+      transform: translate(35px, 150px);
+    }
+
+     /* Curved arrows */
+     .curved-arrow {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .curved-arrow.bottom-left-to-bottom-right {
+      bottom: 0;
+      left: 0;
+      transform: translate(300px, 170px); /* Adjust as needed */
+    }
+
+    .curved-arrow.top-right-to-top-left {
+      top: 0;
+      right: 0;
+      transform: translate(-300px, 50px); /* Adjust as needed */
+    }
+
+    /* Apply the vertical shift to every second card */
+    .flip-card:nth-of-type(2n) {
+      transform: translateY(40px); /* Move the right cards down by half the card's height (100px) */
     }
 
     /* Flip card inner container */
@@ -37,54 +105,62 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 15px;
     }
 
     /* Front side styling */
     .flip-card-front {
-      color: rgb(228, 215, 215);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* Card Colors */
-    .flip-card:nth-child(1) .flip-card-front,
-    .flip-card:nth-child(1) .flip-card-back,
-    .flip-card:nth-child(2) .flip-card-front,
-    .flip-card:nth-child(2) .flip-card-back {
-      background-color: #eb5b56;
+    /* Card Colors using nth-of-type */
+    .flip-card:nth-of-type(1) .flip-card-front,
+    .flip-card:nth-of-type(1) .flip-card-back {
+      background-color: #eb5b56; /* Red */
     }
 
-    .flip-card:nth-child(3) .flip-card-front,
-    .flip-card:nth-child(3) .flip-card-back,
-    .flip-card:nth-child(4) .flip-card-front,
-    .flip-card:nth-child(4) .flip-card-back {
-      background-color: #fabf03;
-
+    .flip-card:nth-of-type(2) .flip-card-front,
+    .flip-card:nth-of-type(2) .flip-card-back {
+      background-color: #eb5b56; /* Red */
     }
 
-    .flip-card:nth-child(5) .flip-card-front,
-    .flip-card:nth-child(5) .flip-card-back,
-    .flip-card:nth-child(6) .flip-card-front,
-    .flip-card:nth-child(6) .flip-card-back {
-      background-color: #28a386;
-
+    .flip-card:nth-of-type(3) .flip-card-front,
+    .flip-card:nth-of-type(3) .flip-card-back {
+      background-color: #fabf03; /* Yellow */
     }
 
-    .flip-card:nth-child(7) .flip-card-front,
-    .flip-card:nth-child(7) .flip-card-back,
-    .flip-card:nth-child(8) .flip-card-front,
-    .flip-card:nth-child(8) .flip-card-back {
-      background-color: #2a92bc;
+    .flip-card:nth-of-type(4) .flip-card-front,
+    .flip-card:nth-of-type(4) .flip-card-back {
+      background-color: #fabf03; /* Yellow */
+    }
 
+    .flip-card:nth-of-type(5) .flip-card-front,
+    .flip-card:nth-of-type(5) .flip-card-back {
+      background-color: #28a386; /* Green */
+    }
+
+    .flip-card:nth-of-type(6) .flip-card-front,
+    .flip-card:nth-of-type(6) .flip-card-back {
+      background-color: #28a386; /* Green */
+    }
+
+    .flip-card:nth-of-type(7) .flip-card-front,
+    .flip-card:nth-of-type(7) .flip-card-back {
+      background-color: #2a92bc; /* Blue */
+    }
+
+    .flip-card:nth-of-type(8) .flip-card-front,
+    .flip-card:nth-of-type(8) .flip-card-back {
+      background-color: #2a92bc; /* Blue */
     }
 
     /* Back side styling */
     .flip-card-back {
-      color: whitesmoke;
+      color: white;
       transform: rotateY(180deg);
       display: flex;
       flex-direction: column;
@@ -94,102 +170,125 @@
   </style>
 </head>
 <body>
+  <div class="card-container">
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Doel</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Welk doel wordt nagestreefd? Omschrijf nauwkeurig het probleem aan de hand van interviews, gesprekken of observaties. Formuleer dit als een organisatiedoel en vermijd een formulering waarin de oplossing al is gegeven.
-        </p> 
-      </div>  
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Impact</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Hebben de interventies in de werksituatie geleid tot oplossing van het oorspronkelijke probleem? Heeft dat in voldoende mate bijgedragen tot het bereiken van de doelstelling? Zijn er (andere) meetbare effecten?
-        </p>
+    <div class="flip-card">
+      <div class="vertical-arrow">&#8659;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Doel</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Welk doel wordt nagestreefd? Omschrijf nauwkeurig het probleem aan de hand van interviews, gesprekken of observaties. Formuleer dit als een organisatiedoel en vermijd een formulering waarin de oplossing al is gegeven.</p> 
+        </div>  
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Werksituatie</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Wat is de huidige werksituatie en wat is de gewenste werksituatie? Welk gedrag draagt bij aan het bereiken van de doelstelling? Wat moet er wijzigen in de werksituatie om dat gedrag te stimuleren?
-        </p>
+    <div class="flip-card">
+      <div class="arrow">&#8660;</div>
+      <div class="vertical-arrow2">&#8657;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Impact</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Hebben de interventies in de werksituatie geleid tot oplossing van het oorspronkelijke probleem? Heeft dat in voldoende mate bijgedragen tot het bereiken van de doelstelling? Zijn er (andere) meetbare effecten?</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Functioneren</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Wordt het geleerde door medewerkers daadwerkelijk in de praktijk toegepast? Is daardoor beoogde verandering tot stand gekomen?
-        </p>
+    <div class="flip-card">
+      <div class="vertical-arrow">&#8659;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Werksituatie</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Wat is de huidige werksituatie en wat is de gewenste werksituatie? Welk gedrag draagt bij aan het bereiken van de doelstelling? Wat moet er wijzigen in de werksituatie om dat gedrag te stimuleren?</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Vaardigheden</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Welke concrete vaardigheden zijn nodig om de werksituatie te veranderen? Hebben medewerkers voldoende kennis en inzicht om het gewenste gedrag te tonen? Is training de oplossing?
-        </p>
+    <div class="flip-card">
+      <div class="arrow">&#8660;</div>
+      <div class="vertical-arrow2">&#8657;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Functioneren</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Wordt het geleerde door medewerkers daadwerkelijk in de praktijk toegepast? Is daardoor beoogde verandering tot stand gekomen?</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Leer-resultaten</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Beheersen de medewerkers de vaardigheden in voldoende mate, zodat ze het gewenste gedrag kunnen uitvoeren?
-        </p>
+    <div class="flip-card">
+      <div class="vertical-arrow">&#8659;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Vaardigheden</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Welke concrete vaardigheden zijn nodig om de werksituatie te veranderen? Hebben medewerkers voldoende kennis en inzicht om het gewenste gedrag te tonen? Is training de oplossing?</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Leersituaties</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Welke leersituaties dragen eraan bij om de medewerker in staat te stellen de benodigde vaardigheden aan te leren? Zorg ervoor dat de interventies gelijkenis vertonen met de praktijk.
-        </p>
+    <div class="flip-card">
+      <div class="arrow">&#8660;</div>
+      <div class="vertical-arrow2">&#8657;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Leer-resultaten</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Beheersen de medewerkers de vaardigheden in voldoende mate, zodat ze het gewenste gedrag kunnen uitvoeren?</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h1>Leerproces</h1>
-      </div>
-      <div class="flip-card-back">
-        <p>Hoe verloopt het leerproces? Zijn de leerinterventies geschikt om de beoogde doelen te bereiken? Zijn er voldoende oefenmogelijkheden? Is er een veilig leerklimaat? Is er voldoende spreiding? Welke achtergrond informatie is beschikbaar?
-        </p>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Leersituaties</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Welke leersituaties dragen eraan bij om de medewerker in staat te stellen de benodigde vaardigheden aan te leren? Zorg ervoor dat de interventies gelijkenis vertonen met de praktijk.</p>
+        </div>
       </div>
     </div>
-  </div>
 
+    <div class="flip-card">
+      <div class="arrow">&#8660;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>Leerproces</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Hoe verloopt het leerproces? Zijn de leerinterventies geschikt om de beoogde doelen te bereiken? Zijn er voldoende oefenmogelijkheden? Is er een veilig leerklimaat? Is er voldoende spreiding? Welke achtergrond informatie is beschikbaar?</p>
+        </div>
+      </div>
+    </div>
+
+     <!-- Curved arrows -->
+     <svg class="curved-arrow bottom-left-to-bottom-right" width="200" height="200" viewBox="0 0 200 200">
+      <path d="M40,30 Q40,65 65,65 L150,65" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" />
+        </marker>
+      </defs>
+    </svg>
+
+    <svg class="curved-arrow top-right-to-top-left" width="200" height="200" viewBox="0 0 200 200">
+      <path d="M150,55 Q150,30 130,30 L50,30" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" />
+        </marker>
+      </defs>
+    </svg>
+
+  </div>
 </body>
 </html>
