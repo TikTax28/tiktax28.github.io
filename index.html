@@ -8,6 +8,7 @@
     body {
       background-color: rgb(248, 249, 241);
       font-family: 'Source Sans Pro', sans-serif;
+      overflow: hidden;
     }
 
     /* Container for flexbox layout */
@@ -18,6 +19,8 @@
       max-width: 900px; /* Limit the width of the card container */
       margin: 0 auto; /* Center the container */
       position: relative;
+      transform: scale(0.68); /* Shrinks the entire container and its content */
+      transform-origin: top center; /* Keeps the container centered when scaled */
     }
 
     /* Flip card container */
@@ -170,23 +173,9 @@
       justify-content: center;
     }
 
-    .top-left {
-      position: absolute;
-      scale: 0.25;
-      transform: translate(-2200px, -400px);
-    }
-
-    .top-right {
-      position: absolute;
-      scale: 0.25;
-      transform: translate(2200px, -900px);
-    }
   </style>
 </head>
 <body>
-  <!-- Add images -->
-  <img src="silver.svg" class="top-left" alt="Top Left Image">
-  <img src="pace.svg" class="top-right" alt="Top Right Image">
   <div class="card-container">
     
 
