@@ -36,13 +36,14 @@
     .arrow {
       font-size: 60px;
       margin: 0 20px; /* Space around the arrow */
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       transform: translate(-197px, 70px) rotate(90deg); /* Move the arrow 20px to the left and 20px down */
        /* Adjusted to center align */
     }
 
+    
      /* New vertical arrow */
      .vertical-arrow {
       font-size: 60px;
@@ -86,7 +87,7 @@
 
     /* Apply the vertical shift to every second card */
     .flip-card:nth-of-type(2n) {
-      transform: translateY(40px); /* Move the right cards down by half the card's height (100px) */
+      transform: translateY(120px); /* Move the right cards down by half the card's height (100px) */
     }
 
     /* Flip card inner container */
@@ -182,7 +183,7 @@
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Strategische Uitdaging</h1>
+          <h1>1. Strategische Uitdaging</h1>
         </div>
         <div class="flip-card-back">
           <p>Welk doel wordt nagestreefd? Omschrijf nauwkeurig het probleem aan de hand van interviews, gesprekken of observaties. Formuleer dit als een organisatiedoel en vermijd een formulering waarin de oplossing al is gegeven.</p> 
@@ -195,7 +196,7 @@
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Impact</h1>
+          <h1>8. Impact</h1>
         </div>
         <div class="flip-card-back">
           <p>Hebben de interventies in de werksituatie geleid tot oplossing van het oorspronkelijke probleem? Heeft dat in voldoende mate bijgedragen tot het bereiken van de doelstelling? Zijn er (andere) meetbare effecten?</p>
@@ -207,7 +208,7 @@
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Probleem Werksituatie</h1>
+          <h1>2. Problemen Werksituatie</h1>
         </div>
         <div class="flip-card-back">
           <p>Wat is de huidige werksituatie en wat is de gewenste werksituatie? Welk gedrag draagt bij aan het bereiken van de doelstelling? Wat moet er wijzigen in de werksituatie om dat gedrag te stimuleren?</p>
@@ -220,7 +221,7 @@
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Prestaties</h1>
+          <h1>7. Prestaties</h1>
         </div>
         <div class="flip-card-back">
           <p>Wordt het geleerde door medewerkers daadwerkelijk in de praktijk toegepast? Is daardoor beoogde verandering tot stand gekomen?</p>
@@ -232,7 +233,7 @@
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Leer & Verander Doelen</h1>
+          <h1>3. Leer- & Veranderdoelen</h1>
         </div>
         <div class="flip-card-back">
           <p>Welke concrete vaardigheden zijn nodig om de werksituatie te veranderen? Hebben medewerkers voldoende kennis en inzicht om het gewenste gedrag te tonen? Is training de oplossing?</p>
@@ -245,7 +246,7 @@
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Resultaten</h1>
+          <h1>6. Resultaten</h1>
         </div>
         <div class="flip-card-back">
           <p>Beheersen de medewerkers de vaardigheden in voldoende mate, zodat ze het gewenste gedrag kunnen uitvoeren?</p>
@@ -256,7 +257,7 @@
     <div class="flip-card" onclick="toggleFlip(this)">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Leer & Verandertraject</h1>
+          <h1>4. Leer- & Verandertraject</h1>
         </div>
         <div class="flip-card-back">
           <p>Welke leersituaties dragen eraan bij om de medewerker in staat te stellen de benodigde vaardigheden aan te leren? Zorg ervoor dat de interventies gelijkenis vertonen met de praktijk.</p>
@@ -268,7 +269,7 @@
       <div class="arrow">&#8691;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>Leer & Verander Proces</h1>
+          <h1>5. Leer- & Veranderproces</h1>
         </div>
         <div class="flip-card-back">
           <p>Hoe verloopt het leerproces? Zijn de leerinterventies geschikt om de beoogde doelen te bereiken? Zijn er voldoende oefenmogelijkheden? Is er een veilig leerklimaat? Is er voldoende spreiding? Welke achtergrond informatie is beschikbaar?</p>
