@@ -35,14 +35,14 @@
     /* Center the arrow between cards */
     .arrow {
       font-size: 60px;
-      margin: 0 20px; /* Space around the arrow */
-      display: none;
+      margin: 0 22px; /* Space around the arrow */
+      display: flex;
       align-items: center;
       justify-content: center;
-      transform: translate(-197px, 70px) rotate(90deg); /* Move the arrow 20px to the left and 20px down */
+      position: absolute;
+      transform: translate(-100px, 45px)  /* Move the arrow 20px to the left and 20px down */
        /* Adjusted to center align */
     }
-
     
      /* New vertical arrow */
      .vertical-arrow {
@@ -67,28 +67,6 @@
       transform: translate(35px, 145px);
     }
 
-     /* Curved arrows */
-     .curved-arrow {
-      position: absolute;
-      z-index: 10;
-    }
-
-    .curved-arrow.bottom-left-to-bottom-right {
-      bottom: 0;
-      left: 0;
-      transform: translate(300px, 170px); /* Adjust as needed */
-    }
-
-    .curved-arrow.top-right-to-top-left {
-      top: 0;
-      right: 0;
-      transform: translate(-300px, 50px); /* Adjust as needed */
-    }
-
-    /* Apply the vertical shift to every second card */
-    .flip-card:nth-of-type(2n) {
-      transform: translateY(120px); /* Move the right cards down by half the card's height (100px) */
-    }
 
     /* Flip card inner container */
     .flip-card-inner {
@@ -181,25 +159,26 @@
 
     <div class="flip-card" onclick="toggleFlip(this)">
       <div class="vertical-arrow">&#8681;</div>
+      
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>1. Strategische Uitdaging</h1>
+          <h1>1. Strategische uitdagingen</h1>
         </div>
         <div class="flip-card-back">
-          <p>Welk doel wordt nagestreefd? Omschrijf nauwkeurig het probleem aan de hand van interviews, gesprekken of observaties. Formuleer dit als een organisatiedoel en vermijd een formulering waarin de oplossing al is gegeven.</p> 
+          <p>Wat zijn de belangrijkste strategische uitdagingen waar de organisatie mee worstelt?</p> 
         </div>  
       </div>
     </div>
 
     <div class="flip-card" onclick="toggleFlip(this)">
-      <div class="arrow">&#8691;</div>
+      
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>8. Impact</h1>
+          <h1>8. Impact op organisatie</h1>
         </div>
         <div class="flip-card-back">
-          <p>Hebben de interventies in de werksituatie geleid tot oplossing van het oorspronkelijke probleem? Heeft dat in voldoende mate bijgedragen tot het bereiken van de doelstelling? Zijn er (andere) meetbare effecten?</p>
+          <p>Kan je de verwachte impact van het leer- en veranderingsprogramma op de belangrijkste doelstellingen en KPI's van de organisatie kwantificeren? Heb je ideeën hoe deze impact kan worden vergroot/ beter kan worden gewaarborgd?</p>
         </div>
       </div>
     </div>
@@ -208,23 +187,22 @@
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>2. Problemen Werksituatie</h1>
+          <h1>2. Problemen werksituatie</h1>
         </div>
         <div class="flip-card-back">
-          <p>Wat is de huidige werksituatie en wat is de gewenste werksituatie? Welk gedrag draagt bij aan het bereiken van de doelstelling? Wat moet er wijzigen in de werksituatie om dat gedrag te stimuleren?</p>
+          <p>Wat moet er verbeterd worden in de werksituatie om  het bereiken van deze strategische uitdagingen mogelijk te maken?</p>
         </div>
       </div>
     </div>
 
     <div class="flip-card" onclick="toggleFlip(this)">
-      <div class="arrow">&#8691;</div>
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>7. Prestaties</h1>
+          <h1>7. Verbeterde prestaties</h1>
         </div>
         <div class="flip-card-back">
-          <p>Wordt het geleerde door medewerkers daadwerkelijk in de praktijk toegepast? Is daardoor beoogde verandering tot stand gekomen?</p>
+          <p>Hoe verwacht je dat het leer- en veranderingsproces zal leiden tot betere prestaties van het personeel? Wat is er nodig om de gewenste impact te garanderen? Hoe kan dit worden bereikt?</p>
         </div>
       </div>
     </div>
@@ -233,23 +211,22 @@
       <div class="vertical-arrow">&#8681;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>3. Leer- & Veranderdoelen</h1>
+          <h1>3. Leer & veranderdoelen</h1>
         </div>
         <div class="flip-card-back">
-          <p>Welke concrete vaardigheden zijn nodig om de werksituatie te veranderen? Hebben medewerkers voldoende kennis en inzicht om het gewenste gedrag te tonen? Is training de oplossing?</p>
+          <p>Welke vaardigheden & veranderingen zijn nodig om het personeel in staat te stellen de werksituatie dienovereenkomstig te verbeteren?</p>
         </div>
       </div>
     </div>
 
     <div class="flip-card" onclick="toggleFlip(this)">
-      <div class="arrow">&#8691;</div>
       <div class="vertical-arrow2">&#8679;</div>
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>6. Resultaten</h1>
+          <h1>6. Verwachte resultaten</h1>
         </div>
         <div class="flip-card-back">
-          <p>Beheersen de medewerkers de vaardigheden in voldoende mate, zodat ze het gewenste gedrag kunnen uitvoeren?</p>
+          <p>Welke capaciteiten en veranderingen verwacht je als resultaat van dit leer- en veranderingsproces? Wat is er nog meer nodig om de verwachte resultaten te bereiken?</p>
         </div>
       </div>
     </div>
@@ -257,46 +234,26 @@
     <div class="flip-card" onclick="toggleFlip(this)">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>4. Leer- & Verandertraject</h1>
+          <h1>4. Leer & verandertraject</h1>
         </div>
         <div class="flip-card-back">
-          <p>Welke leersituaties dragen eraan bij om de medewerker in staat te stellen de benodigde vaardigheden aan te leren? Zorg ervoor dat de interventies gelijkenis vertonen met de praktijk.</p>
+          <p>Welke leer- en verandergebeurtenissen zijn nodig om deze vaardigheden en veranderingen te verwerven en zo een werksituatie te creëren die het bereiken van de strategische uitdagingen vergemakkelijkt?</p>
         </div>
       </div>
     </div>
-
-    <div class="flip-card" onclick="toggleFlip(this)">
-      <div class="arrow">&#8691;</div>
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h1>5. Leer- & Veranderproces</h1>
-        </div>
-        <div class="flip-card-back">
-          <p>Hoe verloopt het leerproces? Zijn de leerinterventies geschikt om de beoogde doelen te bereiken? Zijn er voldoende oefenmogelijkheden? Is er een veilig leerklimaat? Is er voldoende spreiding? Welke achtergrond informatie is beschikbaar?</p>
-        </div>
-      </div>
-    </div>
-
-     <!-- Curved arrows -->
-     <svg class="curved-arrow bottom-left-to-bottom-right" width="200" height="200" viewBox="0 0 200 200">
-      <path d="M40,30 Q40,65 65,65 L150,65" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" />
-        </marker>
-      </defs>
-    </svg>
-
-    <svg class="curved-arrow top-right-to-top-left" width="200" height="200" viewBox="0 0 200 200">
-      <path d="M150,55 Q150,30 130,30 L50,30" stroke="black" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" />
-        </marker>
-      </defs>
-    </svg>
     
 
+    <div class="flip-card" onclick="toggleFlip(this)">
+      <div class="arrow">&#8680;</div>
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>5. Leer & veranderproces</h1>
+        </div>
+        <div class="flip-card-back">
+          <p>Hoe zou je willen dat het leer- en veranderingsproces eruit ziet om tot een effectief traject te komen? Hoe zouden we ervoor kunnen zorgen dat tijdens dit leer- en veranderingsproces de transfer naar de werksituatie optimaal verloopt? Hoe kunnen we zorgen voor afstemming tussen de deelnemers en de organisatie om de gewenste impact op de strategische uitdagingen te garanderen?</p>
+        </div>
+      </div>
+    </div>    
   </div>
 </body>
 </html>
